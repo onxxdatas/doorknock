@@ -1,4 +1,4 @@
-# doorknock
+# doorknock v1.0.1
 
 > Detect a website's anti-bot defenses and rate how hard it is to scrape — from the command line or from Python.
 
