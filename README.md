@@ -1,4 +1,4 @@
-# doorknock v1.0.1
+# doorknock v1.2.0
 
 > Detect a website's anti-bot defenses and rate how hard it is to scrape — from the command line or from Python.
 
@@ -16,6 +16,15 @@
 - **Client-side fingerprinting** — FingerprintJS, Castle, Sift, Forter, ThreatMetrix, iovation, custom canvas/WebGL/audio probes
 
 Findings are weighted by severity and aggregated into a single **scraping difficulty** rating from `EASY` to `EXTREME` along with a 0–100 score.
+
+## Updates
+
+This version improves scanner robustness and probe handling by:
+
+- Using a retry-enabled `requests.Session` for the main probe, robots.txt fetch, and no-User-Agent probe
+- Better handling transient HTTP failures and common server-side retries
+- Strengthening raw response parsing so `Set-Cookie` extraction does not fail on unexpected response internals
+- Ensuring scan metadata always includes `main_body_len` even when the initial fetch fails
 
 ---
 
